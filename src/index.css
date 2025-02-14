@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 10% 95%;
+    --foreground: 200 20% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 200 20% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 20% 20%;
+    --primary: 200 43% 18%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 25% 86%;
+    --secondary-foreground: 200 43% 18%;
+    --accent: 198 92% 67%;
+    --accent-foreground: 200 43% 18%;
+    --border: 200 10% 90%;
+    --input: 200 10% 90%;
+    --ring: 200 43% 18%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 200 50% 3%;
+    --foreground: 0 0% 95%;
+    --card: 200 50% 3%;
+    --card-foreground: 0 0% 95%;
+    --popover: 200 50% 3%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 200 43% 18%;
+    --primary-foreground: 0 0% 95%;
+    --secondary: 24 25% 86%;
+    --secondary-foreground: 200 43% 18%;
+    --accent: 198 92% 67%;
+    --accent-foreground: 200 43% 18%;
+    --border: 200 50% 10%;
+    --input: 200 50% 10%;
+    --ring: 200 43% 18%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+.glass-card {
+  @apply backdrop-blur-lg bg-white/80 dark:bg-gray-800/80 border border-white/20 shadow-lg;
+}
+
+.service-card {
+  @apply glass-card rounded-2xl transition-all duration-300 hover:scale-[1.02] cursor-pointer;
+}
+
+.heading-gradient {
+  @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent dark:from-accent dark:to-primary;
+}
+
+/* Flip Card Styles */
+.flip-card {
+  @apply relative w-full h-[400px] perspective-1000;
+}
+
+.flip-card-inner {
+  @apply relative w-full h-full transition-transform duration-500 transform-style-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  @apply rotate-y-180;
+}
+
+.flip-card-front,
+.flip-card-back {
+  @apply absolute w-full h-full backface-hidden;
+}
+
+.flip-card-back {
+  @apply rotate-y-180;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
