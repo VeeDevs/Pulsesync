@@ -1,10 +1,10 @@
-
 import { ServiceCard } from "@/components/ServiceCard";
 import { Home, Lightbulb, Shield, Mic, Phone, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { smartHomeData } from "@/data/smartHomeData";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const SmartHome = () => {
   const [activeVideo, setActiveVideo] = useState<number | null>(null);
@@ -60,6 +60,13 @@ const SmartHome = () => {
     <div className="min-h-screen">
       <header className="bg-primary/95 text-white py-20">
         <div className="container max-w-6xl mx-auto px-4">
+          <nav className="mb-8">
+            <Link to="/">
+              <Button variant="ghost" className="text-white hover:text-secondary">
+                ← Back to Home
+              </Button>
+            </Link>
+          </nav>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Smart Home Integration</h1>
           <p className="text-xl">Transform your home into a modern, intelligent space with our smart home solutions</p>
         </div>
@@ -171,6 +178,25 @@ const SmartHome = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-20 px-4 dark:bg-gray-800">
+        <div className="container max-w-6xl mx-auto">
+          <div className="glass-card max-w-xl mx-auto p-8 rounded-2xl">
+            <h2 className="text-3xl font-bold text-center mb-8 heading-gradient">
+              Get Started with Smart Home
+            </h2>
+            <p className="text-center mb-6">
+              Ready to transform your home into an intelligent living space? Contact us to learn more about our smart home solutions.
+            </p>
+            <Button 
+              className="w-full"
+              onClick={() => scrollToSection("contact")}
+            >
+              Contact Us
+            </Button>
           </div>
         </div>
       </section>

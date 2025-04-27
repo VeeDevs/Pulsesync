@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Home, Globe, Menu, X, Moon, Sun, Smartphone, ArrowDown } from "lucide-react";
+import { Home, Globe, Menu, X, Moon, Sun, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ContactForm } from "@/components/ContactForm";
