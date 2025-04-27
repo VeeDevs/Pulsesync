@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
 import { smartHomeData } from "@/data/smartHomeData";
+import Link from "next/link";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -79,7 +80,16 @@ const Index = () => {
     <div className={`min-h-screen ${isDarkMode ? 'dark' : ''}`}>
       <header className="fixed top-0 left-0 right-0 bg-primary/95 dark:bg-gray-900/95 backdrop-blur-sm text-white py-4 z-50 shadow-lg">
         <div className="container max-w-6xl mx-auto flex items-center justify-between px-4">
-          <h1 className="text-2xl md:text-3xl font-bold tracking-wider">PULSESYNC</h1>
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/2c1fdcef-9b20-474f-81df-7937708f1112.png" 
+              alt="PulseSync Living Logo" 
+              className="h-8 w-auto mr-2"
+            />
+            <h1 className="text-2xl md:text-3xl font-bold tracking-wider flex items-baseline">
+              PULSESYNC <span className="text-sm ml-1">living</span>
+            </h1>
+          </div>
           
           <div className="flex items-center gap-4">
             <Button
@@ -119,21 +129,25 @@ const Index = () => {
                 onClick={() => handleNavClick("services")}
                 className="text-white hover:text-secondary"
               >
-                Services
+                Smart Home
               </Button>
               <Button 
                 variant="ghost" 
-                onClick={() => handleNavClick("about")}
+                as="a"
+                href="https://www.pulsesynccooking.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white hover:text-secondary"
               >
-                About
+                Cooking
               </Button>
               <Button 
                 variant="ghost" 
-                onClick={() => handleNavClick("reviews")}
+                as={Link}
+                to="/solutions"
                 className="text-white hover:text-secondary"
               >
-                Reviews
+                Solutions
               </Button>
               <Button 
                 variant="ghost" 
@@ -160,7 +174,7 @@ const Index = () => {
                 onClick={() => handleNavClick("services")}
                 className="text-white hover:text-secondary w-full justify-start"
               >
-                Services
+                Smart Home
               </Button>
               <Button 
                 variant="ghost" 
