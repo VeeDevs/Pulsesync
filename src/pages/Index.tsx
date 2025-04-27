@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import { Home, Globe, Menu, X, Moon, Sun, Smartphone, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,7 +6,6 @@ import { ContactForm } from "@/components/ContactForm";
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,14 +81,15 @@ const Index = () => {
               >
                 Home
               </Button>
-              <Button 
-                variant="ghost" 
-                component={Link}
-                to="/smart-home"
-                className="text-white hover:text-secondary"
-              >
-                Smart Home
-              </Button>
+              <Link to="/smart-home">
+                <Button 
+                  variant="ghost" 
+                  asChild
+                  className="text-white hover:text-secondary"
+                >
+                  Smart Home
+                </Button>
+              </Link>
               <Button 
                 variant="ghost" 
                 onClick={() => window.open("https://www.pulsesynccooking.com/", "_blank")}
@@ -123,14 +123,15 @@ const Index = () => {
               >
                 Home
               </Button>
-              <Button 
-                variant="ghost" 
-                component={Link}
-                to="/smart-home"
-                className="text-white hover:text-secondary w-full justify-start"
-              >
-                Smart Home
-              </Button>
+              <Link to="/smart-home">
+                <Button 
+                  variant="ghost" 
+                  asChild
+                  className="text-white hover:text-secondary w-full justify-start"
+                >
+                  Smart Home
+                </Button>
+              </Link>
               <Button 
                 variant="ghost" 
                 onClick={() => window.open("https://www.pulsesynccooking.com/", "_blank")}
@@ -231,13 +232,14 @@ const Index = () => {
                       Transform your home into a modern, intelligent space with our smart home automation services.
                     </CardDescription>
                     <div className="flex justify-center">
-                      <Button 
-                        component={Link}
-                        to="/smart-home"
-                        className="mt-4"
-                      >
-                        Explore Smart Home
-                      </Button>
+                      <Link to="/smart-home">
+                        <Button 
+                          className="mt-4"
+                          asChild
+                        >
+                          Explore Smart Home
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
