@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
 import { smartHomeData } from "@/data/smartHomeData";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -133,18 +133,14 @@ const Index = () => {
               </Button>
               <Button 
                 variant="ghost" 
-                as="a"
-                href="https://www.pulsesynccooking.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => window.open("https://www.pulsesynccooking.com/", "_blank")}
                 className="text-white hover:text-secondary"
               >
                 Cooking
               </Button>
               <Button 
                 variant="ghost" 
-                as={Link}
-                to="/solutions"
+                onClick={() => window.location.href = "/solutions"}
                 className="text-white hover:text-secondary"
               >
                 Solutions
