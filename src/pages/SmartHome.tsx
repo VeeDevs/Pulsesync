@@ -31,9 +31,7 @@ const SmartHome = () => {
       <InteractiveShowcase />
       <AboutSection />
       <CoverageSection />
-      <div className="logo-background">
-        <ContactSection />
-      </div>
+      <ContactSection />
       <FooterSection scrollToSection={scrollToSection} />
     </div>
   );

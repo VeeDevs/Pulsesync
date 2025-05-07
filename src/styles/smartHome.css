@@ -77,27 +77,6 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* Logo background */
-.logo-background {
-  position: relative;
-}
-
-.logo-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('/lovable-uploads/2c1fdcef-9b20-474f-81df-7937708f1112.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  opacity: 0.05;
-  pointer-events: none;
-  z-index: 0;
-}
-
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
