@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Home, Globe, Menu, X, Moon, Sun, Smartphone, ArrowDown } from "lucide-react";
+import { Home, Globe, Menu, X, Moon, Sun, Smartphone, ArrowDown, MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ContactForm } from "@/components/ContactForm";
@@ -466,26 +466,96 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="contact" className="py-20 px-4 dark:bg-gray-800">
+        <section id="contact" className="py-20 px-4 dark:bg-gray-800 relative">
+          <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+            <img 
+              src="/lovable-uploads/2c1fdcef-9b20-474f-81df-7937708f1112.png" 
+              alt="PulseSync Logo Background" 
+              className="w-full max-w-xl"
+            />
+          </div>
           <div className="container max-w-6xl mx-auto">
-            <div className="glass-card max-w-xl mx-auto p-8 rounded-2xl">
-              <h2 className="text-3xl font-bold text-center mb-8 heading-gradient">
-                Contact Us
-              </h2>
-              <ContactForm />
-              <div className="mt-8 text-center space-y-4">
-                <div>
-                  <p className="font-semibold">Contact Numbers:</p>
-                  <p>+27 (82) 336-5870</p>
-                  <p>+27 (73) 127-1721</p>
+            <div className="flex flex-col lg:flex-row gap-12">
+              <motion.div 
+                className="lg:w-1/2"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="glass-card p-8 rounded-xl h-full">
+                  <h2 className="text-3xl font-bold text-center mb-8 heading-gradient">
+                    Contact Us
+                  </h2>
+                  <ContactForm />
+                  <div className="mt-8 text-center space-y-4">
+                    <Button 
+                      onClick={handleWhatsAppRedirect}
+                      className="bg-green-600 hover:bg-green-700 text-white w-full"
+                    >
+                      Chat with us on WhatsApp
+                    </Button>
+                  </div>
                 </div>
-                <Button 
-                  onClick={handleWhatsAppRedirect}
-                  className="bg-green-600 hover:bg-green-700 text-white w-full"
-                >
-                  Chat with us on WhatsApp
-                </Button>
-              </div>
+              </motion.div>
+              
+              <motion.div 
+                className="lg:w-1/2"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="glass-card p-8 rounded-xl h-full">
+                  <h3 className="text-2xl font-semibold mb-6 text-primary">Contact Information</h3>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4">
+                      <MapPin className="h-6 w-6 text-accent mt-0.5" />
+                      <div>
+                        <h4 className="font-medium text-primary">Headquarters</h4>
+                        <p className="text-primary/70 mt-1">
+                          101 Innovation Drive<br />
+                          San Francisco, CA 94107
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <Phone className="h-6 w-6 text-accent mt-0.5" />
+                      <div>
+                        <h4 className="font-medium text-primary">Phone</h4>
+                        <p className="text-primary/70 mt-1">
+                          +27 (82) 336-5870<br />
+                          +27 (73) 127-1721
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <Mail className="h-6 w-6 text-accent mt-0.5" />
+                      <div>
+                        <h4 className="font-medium text-primary">Email</h4>
+                        <p className="text-primary/70 mt-1">
+                          info@pulsesync.com
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <Clock className="h-6 w-6 text-accent mt-0.5" />
+                      <div>
+                        <h4 className="font-medium text-primary">Business Hours</h4>
+                        <p className="text-primary/70 mt-1">
+                          Monday - Friday: 9AM - 6PM<br />
+                          Saturday: 10AM - 4PM<br />
+                          Sunday: Closed
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
