@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Home, Globe, Menu, X, Moon, Sun, Smartphone, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -221,29 +220,26 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300">
-                  <CardHeader className="pb-2">
-                    <div className="flex justify-center mb-4">
-                      <Smartphone className="w-16 h-16 text-primary" />
-                    </div>
-                    <CardTitle className="text-2xl text-center">Smart Home</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-center mb-4">
-                      Transform your home into a modern, intelligent space with our smart home automation services.
-                    </CardDescription>
-                    <div className="flex justify-center">
-                      <Link to="/smart-home">
-                        <Button 
-                          className="mt-4"
-                          asChild
-                        >
+                <Link to="/smart-home" className="block h-full">
+                  <Card className="h-full hover:shadow-lg transition-all duration-300 cursor-pointer">
+                    <CardHeader className="pb-2">
+                      <div className="flex justify-center mb-4">
+                        <Smartphone className="w-16 h-16 text-primary" />
+                      </div>
+                      <CardTitle className="text-2xl text-center">Smart Home</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-center mb-4">
+                        Transform your home into a modern, intelligent space with our smart home automation services.
+                      </CardDescription>
+                      <div className="flex justify-center">
+                        <Button className="mt-4">
                           Explore Smart Home
                         </Button>
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               </motion.div>
 
               <motion.div
@@ -260,7 +256,6 @@ const Index = () => {
                         fill="none" 
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <path d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19Z" stroke="currentColor" strokeWidth="2" />
                         <path d="M15 9.5C15 9.5 13.5 8 11.5 8C9.5 8 8 9.5 8 11.5C8 13.5 9.5 15 11.5 15C13.5 15 15 13.5 15 11.5" stroke="currentColor" strokeWidth="2" />
                         <path d="M9 19L9 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                         <path d="M15 19L15 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
