@@ -29,8 +29,19 @@ const ContactSection = () => {
     form.reset();
   };
 
+  const handleWhatsAppRedirect = () => {
+    window.open(`https://wa.me/27813092938`, '_blank');
+  };
+
   return (
-    <section id="contact" className="py-20 px-4 bg-white dark:bg-gray-900">
+    <section id="contact" className="py-20 px-4 bg-white dark:bg-gray-900 relative">
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <img 
+          src="/lovable-uploads/2c1fdcef-9b20-474f-81df-7937708f1112.png" 
+          alt="PulseSync Logo Background" 
+          className="w-full h-full object-contain opacity-10"
+        />
+      </div>
       <div className="container max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -152,7 +163,8 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium text-primary">Phone</h4>
                     <p className="text-primary/70 mt-1">
-                      +1 (800) 555-0123
+                      +27 (82) 336-5870<br />
+                      +27 (73) 127-1721
                     </p>
                   </div>
                 </div>
@@ -178,6 +190,13 @@ const ContactSection = () => {
                     </p>
                   </div>
                 </div>
+
+                <Button 
+                  onClick={handleWhatsAppRedirect}
+                  className="bg-green-600 hover:bg-green-700 text-white w-full mt-6"
+                >
+                  Chat with us on WhatsApp
+                </Button>
               </div>
             </div>
           </motion.div>
